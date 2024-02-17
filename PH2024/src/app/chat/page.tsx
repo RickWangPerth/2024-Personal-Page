@@ -19,7 +19,7 @@ const ChatPage = () => {
         style={{ 
           border: 'lightgrey 1px solid', 
           height: 'calc(100vh - 40px)',
-          width: 'calc(88vw)',
+          width: 'calc(80vw)',
           borderRadius: '20px',
           display: loading ? 'none' : 'block',
         }}
