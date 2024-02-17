@@ -8,9 +8,9 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
-  XIcon,
+  WebsiteIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+import portraitImage from '@/images/portrait.png'
 
 function SocialLink({
   className,
@@ -63,13 +63,13 @@ export default function About() {
               src={portraitImage}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
-              className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+              className="rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             />
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Spencer Sharp. I live in New York City, where I design the
+            I’m Rick Wang. I live in New York City, where I design the
             future.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
@@ -103,24 +103,25 @@ export default function About() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={XIcon}>
-              Follow on X
-            </SocialLink>
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+
+            <SocialLink href="https://www.instagram.com/hideinperth/" icon={InstagramIcon} className="mt-4">
               Follow on Instagram
             </SocialLink>
-            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+            <SocialLink href="https://github.com/RickWangPerth" icon={GitHubIcon} className="mt-4">
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            <SocialLink href="https://www.linkedin.com/in/xinlyuwang/" icon={LinkedInIcon} className="mt-4">
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
-              href="mailto:spencer@planetaria.tech"
+              href="mailto:xinlyuwang96@gmail.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              spencer@planetaria.tech
+              xinlyuwang96@gmail.com
+            </SocialLink>
+            <SocialLink href="https://www.quokkai.com.au/" icon={WebsiteIcon} className="mt-4">
+              QuokkAI Website
             </SocialLink>
           </ul>
         </div>

@@ -9,12 +9,12 @@ import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
-  XIcon,
+  WebsiteIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoInfosys from '@/images/logos/infosys.png'
+import logoUWA from '@/images/logos/uwa.png'
+
+import logoQuokkAI from '@/images/logos/quokkai.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -113,10 +113,16 @@ function SocialLink({
 function Newsletter() {
   return (
     <form
-      action="/thank-you"
+      action="https://gmail.us22.list-manage.com/subscribe/post?u=228793f33bf0242dabfc8d578&amp;id=2ccec90a82&amp;f_id=00fcc2e1f0"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+      target="_self"
+      noValidate
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        {/* MailIcon should be an actual SVG or component */}
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Stay up to date</span>
       </h2>
@@ -126,18 +132,27 @@ function Newsletter() {
       <div className="mt-6 flex">
         <input
           type="email"
+          name="EMAIL"
           placeholder="Email address"
           aria-label="Email address"
           required
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 sm:text-sm dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10"
         />
+        {/* The Button component should render an input of type submit */}
         <Button type="submit" className="ml-4 flex-none">
           Join
         </Button>
       </div>
+      {/* Include any hidden inputs required by MailChimp */}
+      <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+        <input type="text" name="b_228793f33bf0242dabfc8d578_2ccec90a82" tabIndex={-1} />
+      </div>
     </form>
   )
 }
+
+// Remember to replace MailIcon with the actual icon component and Button with your button component
+
 
 interface Role {
   company: string
@@ -190,38 +205,38 @@ function Resume() {
     {
       company: 'QuokkAI',
       title: 'Co-Founder',
-      logo: logoPlanetaria,
+      logo: logoQuokkAI,
       start: '2023',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
-      url: 'https://quokk.ai',
+      url: 'https://quokkai.com.au/',
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
-      url: 'https://quokk.ai',
+      company: 'Infosys Limited',
+      title: 'Vaction Software Developer',
+      logo: logoInfosys,
+      start: '2023 Jan',
+      end: '2023 Mar',
+      url: 'https://www.infosys.com/',
     },
-    
+
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
-      url: 'https://quokk.ai',
+      company: 'the University of Western Australia',
+      title: 'Master of IT',
+      logo: logoUWA,
+      start: '2021 Jun',
+      end: '2023 Jul',
+      url: 'https://www.uwa.edu.au/',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
-      url: 'https://quokk.ai',
+      company: 'the University of Western Australia',
+      title: 'MPE(Electrical and Electronic)',
+      logo: logoUWA,
+      start: '2017 Jun',
+      end: '2019 Jul',
+      url: 'https://www.uwa.edu.au/',
     },
   ]
 
@@ -229,14 +244,22 @@ function Resume() {
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">Work & Education</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href={"/files/RickWangCV[2024].pdf"} variant="secondary" className="group mt-6 w-full" locale={false} target="_blank"  rel="noopener noreferrer" download>
+      <Button
+        href={'/files/RickWangCV[2024].pdf'}
+        variant="secondary"
+        className="group mt-6 w-full"
+        locale={false}
+        target="_blank"
+        rel="noopener noreferrer"
+        download
+      >
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -279,30 +302,38 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software designer, founder, and amateur astronaut.
+            Application designer, data magician, and psychology enthusiast.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
+            I’m Rick, a application designer and AI & IT solution provider based in Perth. 
+            I’m the co-founder of QuokkAI, where we develop
             technologies that empower regular people to explore space on their
             own terms.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="#" aria-label="Follow on X" icon={XIcon} />
             <SocialLink
-              href="#"
+              href="https://www.quokkai.com.au/"
+              aria-label="Follow QuokkAI"
+              icon={WebsiteIcon}
+              target="_blank"
+            />
+            <SocialLink
+              href="https://www.instagram.com/hideinperth/"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
+              target="_blank"
             />
             <SocialLink
-              href="#"
+              href="https://www.instagram.com/hideinperth/"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
+              target="_blank"
             />
             <SocialLink
-              href="#"
+              href="https://www.linkedin.com/in/xinlyuwang/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+              target="_blank"
             />
           </div>
         </div>

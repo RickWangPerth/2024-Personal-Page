@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Rick Wang',
     default:
-      'Rick Wang - Software developer, founder, and amateur psychologist',
+      'Rick Wang - Application designer, engineer, and psychology enthusiast.',
   },
   description:
-    'I’m Rick, a software developer and entrepreneur based in Perth Western Australia. I’m the founder of QuokkAI, where we develop technologies that empower regular people to explore space on their own terms.',
+    'I’m Rick, a software developer and entrepreneur based in Perth Western Australia. I’m the co-founder of QuokkAI, where we leverage cutting-edge technology to empower local businesses to fostering innovation and building a sustainable community.',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
