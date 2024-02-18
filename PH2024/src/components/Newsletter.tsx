@@ -98,7 +98,7 @@ const Newsletter: React.FC = () => {
     if (subscribeStatus === 'success') {
       const timer = setTimeout(() => {
         router.push('/thank-you')
-      }, 1500)
+      }, 500)
       return () => clearTimeout(timer)
     }
   }, [subscribeStatus, router])

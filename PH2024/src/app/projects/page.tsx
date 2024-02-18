@@ -3,47 +3,59 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoDrQuokka from '@/images/logos/drQuokka.svg'
+import logoPlantPal from '@/images/logos/plantPal.svg'
+import logoLampLens from '@/images/logos/lumpLens.svg'
+import logoEquipInsight from '@/images/logos/equipInsight.svg'
+import logoSoSync from '@/images/logos/soSync.svg'
+import logoEcotrack from '@/images/logos/ecotrak.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'DrQuokka',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'An application for self-diagnosis, triage, and ED visit planning, optimizing resource allocation and reducing ED pressure.',
+    skill: 'App Development',
+    link: { href: 'https://docs.google.com/presentation/d/1Zcgg1d5jrBCUkBKX8QmKsmMxA3osNvIdzktQsivH8uM/edit#slide=id.p1', label: 'Presentation Keynote' },
+    logo: logoDrQuokka,
   },
   {
-    name: 'Animaginary',
+    name: 'LumpLens',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'A ML model that predicts ore characteristics to accelerate the mining investigation process and reduce emissions and costs.',
+    skill: 'Data science',
+    link: { href: 'https://docs.google.com/presentation/d/1f5BfB0tIzSqsakcSov5ZaXzAGn7zX00WADqFoax5dAY/edit?usp=sharing', label: 'Poster' },
+    logo: logoLampLens,
   },
   {
-    name: 'HelioStream',
+    name: 'EquipInsight',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'A dashboard tracks equipment performance data to enable managers to improve the working process.',
+    skill: 'Data analysis',
+    link: { href: 'https://github.com/23270983Ke912/CITS5206_Roborigger-Dashboard', label: 'GitHub Repo' },
+    logo: logoEquipInsight,
   },
   {
-    name: 'cosmOS',
+    name: 'SOSync',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'Larverage LLM and AI models to enhance the daily work of DEFS coordinators by converting audio into formatted tables.',
+    skill: 'AI & LLM',
+    link: { href: 'https://colab.research.google.com/drive/1AwsSby5EeYuT3_LnMgis7McgsPuahndL?usp=sharing', label: 'Colab Demo' },
+    logo: logoSoSync,
   },
   {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+    name: 'EcoTrak',
+    description: 'A greenhouse gas emission calculator estimates corporate carbon footprint based on business activities.',
+    skill: 'Sustainability',
+    link: { href: 'https://github.com/RickWangPerth/Infosys-EcoTrak-Project', label: 'GitHub Repo' },
+    logo: logoEcotrack,
+  },
+  {
+    name: 'PlantPal',
+    description: 'An IoT application that supports users to take care of their plants remotely.',
+    skill: 'IoT & Cloud',
+    link: { href: 'https://github.com/RickWangPerth/CITS5506-IoT-Plant-Watering-System', label: 'GitHub Repo' },
+    logo: logoPlantPal,
   },
 ]
 
@@ -60,14 +72,14 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Things I’ve made trying to create a better world.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Things I’ve made trying to create a better world."
+      intro="I’ve worked on these little projects through my academic journey. Hope some of them can bring you some inspiration. Let me know if you have any questions or feedback."
     >
       <ul
         role="list"
@@ -83,9 +95,15 @@ export default function Projects() {
                 unoptimized
               />
             </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
+            <div className="flex items-center space-x-4">
+              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              </h2>
+              <p className="relative mt-6 rounded-full px-3 text-sm font-semibold bg-zinc-100/90 text-zinc-600 ring-1 ring-zinc-900/5 backdrop-blur group-hover:text-teal-500 dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+                {project.skill}
+              </p>
+            </div>
+
             <Card.Description>{project.description}</Card.Description>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
               <LinkIcon className="h-6 w-6 flex-none" />
