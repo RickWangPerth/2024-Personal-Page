@@ -1,0 +1,82 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import dataStorage from './dataStorage.jpg'
+
+export const article = {
+  author: 'Rick Wang',
+  date: '2024-01-21',
+  title: '2024 Web Storage Technologies Guide',
+  description:
+    'Choosing the right storage technology in web application development is crucial for performance, user experience, and data management. Here, we explore four key web storage options: Local Storage, Session Storage, Cookies, and IndexedDB.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Choosing the right storage technology in web application development is crucial for performance, user experience, and data management. 
+
+Here, we explore four key web storage options: Local Storage, Session Storage, Cookies, and IndexedDB.
+
+<Image src={dataStorage} alt="" />
+
+Here is a downloadable Canva Document of the guide: <a href="https://www.canva.com/design/DAF1Le_bxaU/oEX58cYLuazA6ZoUBtT-Fg/edit?utm_content=DAF1Le_bxaU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"> [2024 Web Storage Technologies Guide] </a>
+
+## Local Storage
+### Overview:
+- A method for persistently storing key-value pairs in a user's browser. Data remains even after the browser is closed.
+### Advantages:
+- **Persistence:** Data is not lost upon closing the browser.
+- **Capacity:** Offers about 5MB of storage space.
+- **User-Friendly API:** Simple and intuitive to use.
+### Disadvantages:
+- **Security Risks:** Vulnerable to cross-site scripting (XSS) attacks.
+- **Lack of Synchronisation:** Data is only stored in the user's current browser.
+### Use Cases:
+- Ideal for saving user preferences, game scores, or application themes.
+### Example Application:
+- An online shopping site storing user cart contents and browsing preferences.
+
+## Session Storage
+### Overview:
+- Similar to Local Storage but data is cleared when the browser window or tab is closed.
+### Advantages:
+- **Limited Lifespan:** Data is cleared when the session ends.
+- **Data Leakage Prevention:** Automatically clears data upon closing the page.
+### Disadvantages:
+- **Limited Storage:** Similar space as Local Storage but more restricted use.
+- **Session-only Access:** Data exists only during the browser session.
+### Use Cases:
+- Suitable for temporarily storing data like form inputs or one-time login sessions.
+### Example Application:
+- Online surveys or quizzes temporarily storing user responses until submission.
+
+## Cookies
+### Overview:
+- Small data fragments sent from a server to a user's browser, used for tracking user information.
+### Advantages:
+- **Persistent Across Sessions:** Expiry time can be set for long-term storage.
+- **Server Interaction:** Ideal for authentication and session tracking.
+### Disadvantages:
+- **Size Limitation:** Each Cookie is limited to about 4KB.
+- **Performance Impact:** Can increase data transmission load.
+### Use Cases:
+- User authentication, session tracking, and personalised settings.
+### Example Application:
+- Online banking systems maintain user login states.
+
+## IndexedDB
+### Overview:
+- A non-relational database in the browser for storing large amounts of structured data.
+### Advantages:
+- **Large Storage Capacity:** Suitable for storing vast amounts of data.
+- **Complex Queries:** Supports transactions and indexing.
+### Disadvantages:
+- **Complexity:** More complex API than Local or Session Storage.
+- **Asynchronous Operations:** Can increase programming complexity.
+### Use Cases:
+- Ideal for applications requiring storage of large data or complex queries, like offline apps.
+### Example Application:
+- Offline reading apps storing extensive articles and user reading progress.

@@ -1,0 +1,52 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import hackathon from './Hackathon.jpg'
+
+export const article = {
+  author: 'Rick Wang',
+  date: '2023-10-05',
+  title: 'Tips for Excelling in a Data Science Hackathon',
+  description:
+    'This guide offers essential strategies for succeeding in data science hackathons, focusing on solution demonstration, data science techniques application, and efficient presentation. It includes a concise checklist, a step-by-step approach to problem-solving, and an Idea Library with innovative tools like ChatGPT and Whisper for project development.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+This guide offers essential strategies for succeeding in data science hackathons, focusing on solution demonstration, data science techniques application, and efficient presentation. It includes a concise checklist, a step-by-step approach to problem-solving, and an Idea Library with innovative tools like ChatGPT and Whisper for project development.
+
+<Image src={hackathon} alt="" />
+
+Here is a downloadable Canva Document of the guide: <a href="https://www.canva.com/design/DAFxxdEn72A/3bzOl_5cCmV1qbsGDxulPw/edit?utm_content=DAFxxdEn72A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"> [Data Science Hackathon Guide] </a>
+
+## Solution Checklist:
+- [ ] **Solve the challenge:** How does your solution address the challenge?
+- [ ] **Demo your application:** Use Gradio, Power App, or a full-stack web app(best to start with a template).
+- [ ] **Apply data science techniques:** Employ regression/characteristic model or generative AI.
+- [ ] **Efficient presentation:** Use PowerPoint or Google Slides. Practice your presentation.
+
+## Problem-Solving Approach:
+- [ ] Review each challenge and associated dataset.
+- [ ] Analyse the dataset to identify data that can bolster your solution.
+- [ ] Draft user stories for your solution.
+- [ ] Define the Minimum Viable Product (MVP).
+- [ ] Finalise the features and establish the data flow.
+- [ ] Develop the model and application.
+- [ ] Deploy and conduct testing.
+- [ ] Prepare and deliver the presentation.
+
+## Idea Library with Innovative Tools:
+
+1. **Co-pilot Type**
+- **Text Summarisation:** <a href="https://openai.com/product" target="_blank">ChatGPT API</a>
+- **Audio to Text:** <a href="https://openai.com/research/whisper" target="_blank">Whisper(local model)</a>
+- **Chat with your document:** <a href="https://www.langchain.com/" target="_blank">LangChain</a>
+- **Demonstration Platform:** <a href="https://colab.google/" target="_blank">Colab</a> + <a href="https://www.gradio.app/" target="_blank">Gradio</a>
+- **Background knowledge:** <a href="https://www.deeplearning.ai/short-courses/" target="_blank">Deeplearning.ai</a>
+2. **Dashboard Type**
+- **Information collection:** <a href="https://www.kaggle.com/" target="_blank">Kaggle</a> / Web crawler
+- **Data processing & ML model training:** <a href="https://colab.google/" target="_blank">Colab</a>，<a href="https://www.dataiku.com/" target="_blank">Dataiku</a>
+- **Demonstration Platform:** <a href="https://www.dataiku.com/" target="_blank">Dataiku</a> or <a href="https://streamlit.io/" target="_blank">Streamlit</a> 

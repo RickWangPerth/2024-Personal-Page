@@ -23,6 +23,7 @@ import image5 from '@/images/photos/image-5.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import Newsletter from '@/components/Newsletter'
+import Head from 'next/head'
 
 // function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 //   return (
@@ -85,16 +86,21 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
+    <>
+      <Head>
+        <link rel="canonical" href="https://www.therick.com.au" />
+      </Head>
+      <Card as="article">
+        <Card.Title href={`/articles/${article.slug}`}>
+          {article.title}
+        </Card.Title>
+        <Card.Eyebrow as="time" dateTime={article.date} decorate>
+          {formatDate(article.date)}
+        </Card.Eyebrow>
+        <Card.Description>{article.description}</Card.Description>
+        <Card.Cta>Read article</Card.Cta>
+      </Card>
+    </>
   )
 }
 
@@ -304,11 +310,11 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Application designer, data magician, and sychology enthusiast.
+            Application designer, data artist, and sychology enthusiast.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Rick, a application designer and AI & IT solution provider based in Perth. 
-            I’m the co-founder of QuokkAI, where we develop
+            I’m Rick, a application designer and AI & IT solution provider based
+            in Perth. I’m the co-founder of QuokkAI, where we develop
             technologies that empower regular people to explore space on their
             own terms.
           </p>
