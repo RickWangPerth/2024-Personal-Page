@@ -1,6 +1,6 @@
 import { type Metadata } from 'next'
 import type { Viewport } from 'next'
-
+import Head from 'next/head'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   },
   description:
     'I’m Rick, a software developer and entrepreneur based in Perth Western Australia. I’m the co-founder of QuokkAI, where we leverage cutting-edge technology to empower local businesses to fostering innovation and building a sustainable community.',
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
-  },
+  // alternates: {
+  //   types: {
+  //     'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
+  //   },
+  // },
 }
 
 export default function RootLayout({
@@ -36,6 +36,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://www.therick.com.au" />
+      </Head>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
         <Providers>
           <div className="flex w-full">
